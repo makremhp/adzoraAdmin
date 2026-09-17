@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/adzora-admin/"
+title = "AdZora Admin Panel"
+description = "Arabic RTL administration panel for the AdZora advertising marketplace. Manage advertisers, publishers, deposit proofs, approvals, balances, CPM pricing, and platform profit settings in a responsive mobile-first workspace."
+version = "1.0.0"
+id = "artifacts/adzora-admin"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/adzora-admin/" ]
+localPort = 22592
+
+[services.development]
+run = "pnpm --filter @workspace/adzora-admin run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/adzora-admin", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/adzora-admin/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22592"
+BASE_PATH = "/adzora-admin/"
