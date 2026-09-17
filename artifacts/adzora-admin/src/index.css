@@ -202,6 +202,8 @@ textarea.input { height:100px; resize:vertical; padding-top:10px; }
 .price-row:last-child { border-bottom:0; }
 .price-row.header { color:#8795a3; font-size:10px; background:#fbfcfd; }
 .price-row:not(.header) { font-size:11px; }
+.price-field { display:block; }
+.share-input-wrap { display:flex; align-items:center; gap:3px; }
 .price-input { width:74px; height:31px; border:1px solid hsl(var(--input)); border-radius:7px; padding:0 7px; direction:ltr; text-align:right; }
 .price-input:focus { outline:2px solid rgba(31,91,172,.15); border-color:hsl(var(--primary)); }
 .drawer-backdrop, .dialog-backdrop { position:fixed; inset:0; background:rgba(9,28,48,.37); z-index:40; animation:fadeIn .18s ease; }
@@ -270,7 +272,16 @@ textarea.input { height:100px; resize:vertical; padding-top:10px; }
   .form-grid { grid-template-columns:1fr; }
   .field-full { grid-column:auto; }
   .settings-card { padding:17px; }
-  .price-table { overflow-x:auto; }
-  .price-row { min-width:550px; }
+  .price-table { overflow:visible; }
+  .price-row.header { display:none; }
+  .price-row:not(.header) { min-width:0; grid-template-columns:1fr 1fr; gap:12px; padding:14px; }
+  .price-format { grid-column:1/-1; font-size:13px; }
+  .price-row:not(.header) > span,
+  .price-row:not(.header) .price-field { display:flex; flex-direction:column; align-items:stretch; gap:5px; color:hsl(var(--muted-foreground)); }
+  .price-row:not(.header) > span::before,
+  .price-row:not(.header) .price-field::before { content:attr(data-label); color:#8795a3; font-size:10px; }
+  .price-row:not(.header) .price-input { width:100%; max-width:120px; }
+  .price-row:not(.header) .share-input-wrap { flex-direction:row; align-items:center; }
+  .price-row:not(.header) .price-share { color:hsl(var(--foreground)); font-size:12px; justify-content:flex-start; }
   .drawer { width:100%; }
 }
