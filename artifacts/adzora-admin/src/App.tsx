@@ -15,6 +15,7 @@ import {
   CircleDollarSign,
   Clock3,
   Eye,
+  ExternalLink,
   FileCheck2,
   FileText,
   Filter,
@@ -160,21 +161,21 @@ const seededUsers: User[] = [
 ];
 
 const seededDeposits: Deposit[] = [
-  { id: 'dep-01', userId: 'usr-04', userName: 'سُلاف للتقنية', userEmail: 'team@sulaf.tech', amount: 1250, method: 'USDT', network: 'TRC20', txid: 'TX-8A90F2D1', proofLabel: 'إيصال التحويل — 1.2 MB', status: 'pending', createdAt: 'اليوم، 10:26', note: '' },
-  { id: 'dep-02', userId: 'usr-06', userName: 'رائد منصور', userEmail: 'raed@northstar.io', amount: 460, method: 'تحويل بنكي', network: 'البنك الأهلي', txid: 'BNK-220491', proofLabel: 'receipt_raed.pdf', status: 'pending', createdAt: 'اليوم، 09:14', note: '' },
-  { id: 'dep-03', userId: 'usr-08', userName: 'شركة مدارك', userEmail: 'growth@madarek.sa', amount: 5000, method: 'USDT', network: 'ERC20', txid: 'TX-191CA02B', proofLabel: 'proof_madarek.png', status: 'approved', createdAt: 'أمس، 15:22', note: 'تمت المطابقة.' },
-  { id: 'dep-04', userId: 'usr-02', userName: 'مريم السالم', userEmail: 'maryam@brightline.co', amount: 2200, method: 'تحويل بنكي', network: 'بنك الراجحي', txid: 'BNK-220311', proofLabel: 'brightline-receipt.pdf', status: 'rejected', createdAt: '12 يونيو، 12:05', note: 'المبلغ في الإيصال لا يطابق الطلب.' },
+  { id: 'dep-01', userId: 'usr-04', userName: 'سُلاف للتقنية', userEmail: 'team@sulaf.tech', amount: 1250, method: 'Cwallet', network: 'USDT · Cwallet Account', txid: 'CW-8A90F2D1', proofLabel: 'إيصال التحويل — 1.2 MB', status: 'pending', createdAt: 'اليوم، 10:26', note: '' },
+  { id: 'dep-02', userId: 'usr-06', userName: 'رائد منصور', userEmail: 'raed@northstar.io', amount: 460, method: 'Binance', network: 'USDT · TRON', txid: 'BN-220491', proofLabel: 'receipt_raed.pdf', status: 'pending', createdAt: 'اليوم، 09:14', note: '' },
+  { id: 'dep-03', userId: 'usr-08', userName: 'شركة مدارك', userEmail: 'growth@madarek.sa', amount: 5000, method: 'Binance', network: 'USDT · Ethereum', txid: 'BN-191CA02B', proofLabel: 'proof_madarek.png', status: 'approved', createdAt: 'أمس، 15:22', note: 'تمت المطابقة.' },
+  { id: 'dep-04', userId: 'usr-02', userName: 'مريم السالم', userEmail: 'maryam@brightline.co', amount: 2200, method: 'Cwallet', network: 'USDT · Cwallet Account', txid: 'CW-220311', proofLabel: 'brightline-receipt.pdf', status: 'rejected', createdAt: '12 يونيو، 12:05', note: 'المبلغ في الإيصال لا يطابق الطلب.' },
 ];
 
 const seededWithdrawals: Withdrawal[] = [
-  { id: 'wd-01', userId: 'usr-01', userName: 'مؤسسة أفق الإعلام', amount: 4200, method: 'تحويل بنكي', receiving: 'SA** **** 4812', status: 'pending', createdAt: 'اليوم، 11:08', note: '' },
-  { id: 'wd-02', userId: 'usr-05', userName: 'مجلة بُعد', amount: 3100, method: 'USDT — TRC20', receiving: 'TQ7…91K', status: 'review', createdAt: 'اليوم، 09:47', note: 'بانتظار مطابقة الرصيد.' },
-  { id: 'wd-03', userId: 'usr-03', userName: 'شبكة مدار', amount: 870, method: 'تحويل بنكي', receiving: 'SA** **** 1020', status: 'completed', createdAt: 'أمس، 13:20', note: 'اكتملت العملية.' },
-  { id: 'wd-04', userId: 'usr-07', userName: 'منصة تكوين', amount: 1600, method: 'USDT — ERC20', receiving: '0xA1…C92', status: 'rejected', createdAt: '10 يونيو، 17:33', note: 'الحساب موقوف حالياً.' },
+  { id: 'wd-01', userId: 'usr-01', userName: 'مؤسسة أفق الإعلام', amount: 4200, method: 'Cwallet · USDT', receiving: 'Cwallet ID: cw_4812', status: 'pending', createdAt: 'اليوم، 11:08', note: '' },
+  { id: 'wd-02', userId: 'usr-05', userName: 'مجلة بُعد', amount: 3100, method: 'TON Network', receiving: 'TON: EQ7…91K', status: 'review', createdAt: 'اليوم، 09:47', note: 'بانتظار مطابقة الرصيد.' },
+  { id: 'wd-03', userId: 'usr-03', userName: 'شبكة مدار', amount: 870, method: 'Binance · USDT', receiving: 'Binance UID: 1020', status: 'completed', createdAt: 'أمس، 13:20', note: 'اكتملت العملية.' },
+  { id: 'wd-04', userId: 'usr-07', userName: 'منصة تكوين', amount: 1600, method: 'Binance · USDT', receiving: 'Binance UID: 0xA1…C92', status: 'rejected', createdAt: '10 يونيو، 17:33', note: 'الحساب موقوف حالياً.' },
 ];
 
 const seededTransactions: Transaction[] = [
-  { id: 'txn-8721', userName: 'شركة مدارك', type: 'deposit', amount: 5000, status: 'completed', createdAt: 'أمس، 15:22', description: 'اعتماد إيداع USDT' },
+  { id: 'txn-8721', userName: 'شركة مدارك', type: 'deposit', amount: 5000, status: 'completed', createdAt: 'أمس، 15:22', description: 'اعتماد إيداع Binance — USDT · Ethereum' },
   { id: 'txn-8719', userName: 'مؤسسة أفق الإعلام', type: 'earning', amount: 1840, status: 'completed', createdAt: 'أمس، 12:08', description: 'أرباح عرض الإعلانات' },
   { id: 'txn-8714', userName: 'مجلة بُعد', type: 'withdrawal', amount: -3100, status: 'pending', createdAt: 'اليوم، 09:47', description: 'طلب سحب إلى محفظة الناشر' },
   { id: 'txn-8708', userName: 'مريم السالم', type: 'debit', amount: -750, status: 'completed', createdAt: '12 يونيو، 16:14', description: 'خصم ميزانية حملة' },
@@ -199,7 +200,7 @@ const seededCampaigns: Campaign[] = [
 ];
 
 const seededActivities: AdminActivity[] = [
-  { id: 'act-01', title: 'اعتماد إيداع جديد', detail: 'شركة مدارك · 5,000 ر.س', by: 'مدير المنصة', time: 'منذ 22 دقيقة', tone: 'green' },
+  { id: 'act-01', title: 'اعتماد إيداع جديد', detail: 'شركة مدارك · $5,000', by: 'مدير المنصة', time: 'منذ 22 دقيقة', tone: 'green' },
   { id: 'act-02', title: 'موقع جديد ينتظر المراجعة', detail: 'Madar News · شبكة مدار', by: 'النظام', time: 'منذ 48 دقيقة', tone: 'gold' },
   { id: 'act-03', title: 'تعليق حملة إعلانية', detail: 'حملة الوعي بالعلامة · رائد منصور', by: 'مدير المنصة', time: 'منذ ساعتين', tone: 'red' },
   { id: 'act-04', title: 'تسجيل ناشر جديد', detail: 'شبكة مدار · 3 مواقع مرتبطة', by: 'النظام', time: 'اليوم، 08:42', tone: 'blue' },
@@ -225,7 +226,19 @@ const routeLabels: Record<string, string> = {
 };
 
 function formatMoney(value: number) {
-  return `${new Intl.NumberFormat('ar-SA', { maximumFractionDigits: 2 }).format(Math.abs(value))} ر.س`;
+  return `$${new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(Math.abs(value))}`;
+}
+function siteHref(url: string) {
+  return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+function compactNumber(value: string) {
+  const match = value.trim().toUpperCase().match(/^([\d.]+)\s*([KM]?)$/);
+  if (!match) return 0;
+  const amount = Number(match[1]);
+  return match[2] === 'M' ? amount * 1_000_000 : match[2] === 'K' ? amount * 1_000 : amount;
+}
+function formatCompact(value: number) {
+  return new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
 }
 function initials(name: string) {
   return name.split(' ').slice(0, 2).map((part) => part[0]).join('');
@@ -413,13 +426,38 @@ function UsersPage({ data, roleFilter }: { data: AdminData; roleFilter?: Account
 }
 
 function UserDrawer({ user, data, onClose, onToggle }: { user: User; data: AdminData; onClose: () => void; onToggle: () => void }) {
-  return <div className="drawer-backdrop" onClick={onClose}><aside className="drawer" onClick={(event) => event.stopPropagation()}><div className="drawer-head"><div><h3>تفاصيل الحساب</h3><p>{user.id} · بيانات Mock Data</p></div><button className="icon-btn" onClick={onClose} aria-label="إغلاق"><X size={16} /></button></div><div className="profile-header"><div className="avatar avatar-large">{initials(user.name)}</div><div><strong>{user.name}</strong><small>{user.email}</small><StatusBadge value={user.status} /></div></div><div className="drawer-section"><h4>معلومات الحساب</h4><div className="detail-grid"><div className="detail-item"><small>نوع الحساب</small><strong>{accountLabel(user.type)}</strong></div><div className="detail-item"><small>تاريخ التسجيل</small><strong>{user.joinedAt}</strong></div><div className="detail-item"><small>الرصيد الحالي</small><strong>{formatMoney(user.balance)}</strong></div><div className="detail-item"><small>المواقع / الحملات</small><strong>{user.linkedCount}</strong></div></div></div><div className="drawer-section"><h4>سجل الإجراءات</h4><div className="activity-list"><ActivityRow activity={{ id: 'detail-1', title: 'تم تسجيل الدخول', detail: 'من جهاز موثوق', by: 'النظام', time: user.lastActivity, tone: 'blue' }} /><ActivityRow activity={{ id: 'detail-2', title: 'تمت مراجعة الحساب', detail: 'بواسطة مدير المنصة', by: 'مدير المنصة', time: 'أمس، 14:10', tone: 'green' }} /></div></div><div className="drawer-actions"><button className="btn btn-primary" onClick={() => { data.notify('تم تعديل الرصيد تجريبياً.'); onClose(); }}>تعديل الرصيد</button><button className="btn btn-subtle" onClick={onToggle}>{user.status === 'active' ? 'إيقاف الحساب' : 'تفعيل الحساب'}</button></div></aside></div>;
+  const [editingBalance, setEditingBalance] = useState(false);
+  const [balanceInput, setBalanceInput] = useState(String(user.balance));
+  const [displayBalance, setDisplayBalance] = useState(user.balance);
+  const accountDeposits = data.deposits.filter((item) => item.userId === user.id);
+  const accountWithdrawals = data.withdrawals.filter((item) => item.userId === user.id);
+  const saveBalance = () => {
+    const nextBalance = Number(balanceInput);
+    if (!Number.isFinite(nextBalance) || nextBalance < 0) {
+      data.notify('أدخل رصيداً صالحاً لا يقل عن صفر.', 'error');
+      return;
+    }
+    const difference = nextBalance - displayBalance;
+    if (difference === 0) {
+      setEditingBalance(false);
+      return;
+    }
+    data.setUsers((current) => current.map((item) => item.id === user.id ? { ...item, balance: nextBalance } : item));
+    data.setTransactions((current) => [{ id: `txn-${Date.now()}`, userName: user.name, type: difference >= 0 ? 'credit' : 'debit', amount: difference, status: 'completed', createdAt: 'الآن', description: 'تعديل رصيد من الأدمن' }, ...current]);
+    data.setActivities((current) => [{ id: `act-${Date.now()}`, title: 'تعديل رصيد مستخدم', detail: `${user.name} · ${formatMoney(displayBalance)} ← ${formatMoney(nextBalance)}`, by: 'مدير المنصة', time: 'الآن', tone: 'blue' }, ...current]);
+    setDisplayBalance(nextBalance);
+    setBalanceInput(String(nextBalance));
+    setEditingBalance(false);
+    data.notify('تم حفظ الرصيد الجديد وتسجيل العملية.');
+  };
+  return <div className="drawer-backdrop" onClick={onClose}><aside className="drawer" onClick={(event) => event.stopPropagation()}><div className="drawer-head"><div><h3>تفاصيل الحساب</h3><p>{user.id} · بيانات Mock Data</p></div><button className="icon-btn" onClick={onClose} aria-label="إغلاق"><X size={16} /></button></div><div className="profile-header"><div className="avatar avatar-large">{initials(user.name)}</div><div><strong>{user.name}</strong><small>{user.email}</small><StatusBadge value={user.status} /></div></div><div className="drawer-section"><h4>معلومات الحساب</h4><div className="detail-grid"><div className="detail-item"><small>نوع الحساب</small><strong>{accountLabel(user.type)}</strong></div><div className="detail-item"><small>تاريخ التسجيل</small><strong>{user.joinedAt}</strong></div><div className="detail-item"><small>الرصيد الحالي</small><strong>{formatMoney(displayBalance)}</strong></div><div className="detail-item"><small>المواقع / الحملات</small><strong>{user.linkedCount}</strong></div><div className="detail-item"><small>طلبات الإيداع</small><strong>{accountDeposits.length}</strong></div><div className="detail-item"><small>طلبات السحب</small><strong>{accountWithdrawals.length}</strong></div></div></div><div className="drawer-section"><h4>تعديل الرصيد</h4>{editingBalance ? <div className="balance-edit-form"><label htmlFor={`balance-${user.id}`}>الرصيد الحالي: {formatMoney(displayBalance)}</label><div className="input-with-suffix"><input id={`balance-${user.id}`} className="input" type="number" min="0" step="0.01" value={balanceInput} onChange={(event) => setBalanceInput(event.target.value)} dir="ltr" autoFocus /><span>$</span></div><div className="balance-edit-actions"><button className="btn btn-primary" onClick={saveBalance}><Check size={14} />حفظ الرصيد الجديد</button><button className="btn btn-subtle" onClick={() => { setBalanceInput(String(displayBalance)); setEditingBalance(false); }}>إلغاء</button></div></div> : <div className="balance-editor-summary"><strong>{formatMoney(displayBalance)}</strong><button className="btn btn-subtle btn-small" onClick={() => { setBalanceInput(String(displayBalance)); setEditingBalance(true); }}>تعديل الرصيد</button></div>}</div><div className="drawer-section"><h4>سجل الإجراءات</h4><div className="activity-list"><ActivityRow activity={{ id: 'detail-1', title: 'تم تسجيل الدخول', detail: 'من جهاز موثوق', by: 'النظام', time: user.lastActivity, tone: 'blue' }} /><ActivityRow activity={{ id: 'detail-2', title: 'تمت مراجعة الحساب', detail: 'بواسطة مدير المنصة', by: 'مدير المنصة', time: 'أمس، 14:10', tone: 'green' }} /></div></div><div className="drawer-actions"><button className="btn btn-subtle" onClick={onToggle}>{user.status === 'active' ? 'إيقاف الحساب' : 'تفعيل الحساب'}</button></div></aside></div>;
 }
 
 function DepositsPage({ data }: { data: AdminData }) {
   const [filter, setFilter] = useState<'all' | DepositStatus>('all');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Deposit | null>(null);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const filtered = data.deposits.filter((deposit) => (filter === 'all' || deposit.status === filter) && `${deposit.userName} ${deposit.userEmail} ${deposit.txid}`.toLowerCase().includes(search.toLowerCase()));
   const updateDeposit = (deposit: Deposit, status: DepositStatus, note = '') => {
     data.setDeposits((current) => current.map((item) => item.id === deposit.id ? { ...item, status, note } : item));
@@ -431,7 +469,18 @@ function DepositsPage({ data }: { data: AdminData }) {
     data.notify(status === 'approved' ? 'تم اعتماد الإيداع وتحديث الرصيد.' : 'تم رفض الإيداع مع حفظ سبب الرفض.', status === 'approved' ? 'success' : 'error');
     setSelected(null);
   };
-  return <section className="content"><PageHeading title="الإيداعات" description="مراجعة إثباتات الدفع وإضافة الرصيد إلى حسابات المستخدمين." actions={<button className="btn btn-subtle" onClick={() => setFilter('pending')}><Filter size={15} />المعلقة ({data.deposits.filter((item) => item.status === 'pending').length})</button>} /><RequestSummary items={[['معلقة', data.deposits.filter((item) => item.status === 'pending').length], ['مقبولة', data.deposits.filter((item) => item.status === 'approved').length], ['مرفوضة', data.deposits.filter((item) => item.status === 'rejected').length]]} /><div className="card table-card"><TableToolbar search={search} setSearch={setSearch} placeholder="ابحث باسم المستخدم أو رقم العملية" filters={['all', 'pending', 'approved', 'rejected']} active={filter} onFilter={(value) => setFilter(value as 'all' | DepositStatus)} /><div className="table-scroll"><table><thead><tr><th>المستخدم</th><th>المبلغ</th><th>طريقة الدفع</th><th>رقم العملية</th><th>الحالة</th><th>التاريخ</th><th /></tr></thead><tbody>{filtered.map((deposit) => <tr key={deposit.id}><td><div className="user-cell"><div className="avatar">{initials(deposit.userName)}</div><div><strong>{deposit.userName}</strong><small>{deposit.userEmail}</small></div></div></td><td><strong className="number">{formatMoney(deposit.amount)}</strong></td><td>{deposit.method}<small>{deposit.network}</small></td><td><span className="number">{deposit.txid}</span></td><td><StatusBadge value={deposit.status} /></td><td>{deposit.createdAt}</td><td><button className="icon-btn" onClick={() => setSelected(deposit)} aria-label="عرض تفاصيل الإيداع"><Eye size={15} /></button></td></tr>)}</tbody></table></div></div>{selected && <DepositDrawer deposit={selected} onClose={() => setSelected(null)} onUpdate={updateDeposit} />}</section>;
+  const openUser = (userId: string) => {
+    const user = data.users.find((item) => item.id === userId);
+    if (user) setSelectedUser(user);
+  };
+  const toggleSelectedUser = () => {
+    if (!selectedUser) return;
+    const next = selectedUser.status === 'active' ? 'suspended' : 'active';
+    data.setUsers((current) => current.map((item) => item.id === selectedUser.id ? { ...item, status: next } : item));
+    setSelectedUser({ ...selectedUser, status: next });
+    data.notify(next === 'active' ? 'تم تفعيل الحساب تجريبياً.' : 'تم إيقاف الحساب تجريبياً.');
+  };
+  return <section className="content"><PageHeading title="الإيداعات" description="مراجعة إثباتات الدفع وإضافة الرصيد إلى حسابات المستخدمين. Cwallet وBinance يقبلان USDT فقط؛ وتظهر شبكة Binance مع كل طلب." actions={<button className="btn btn-subtle" onClick={() => setFilter('pending')}><Filter size={15} />المعلقة ({data.deposits.filter((item) => item.status === 'pending').length})</button>} /><RequestSummary items={[['معلقة', data.deposits.filter((item) => item.status === 'pending').length], ['مقبولة', data.deposits.filter((item) => item.status === 'approved').length], ['مرفوضة', data.deposits.filter((item) => item.status === 'rejected').length]]} /><div className="card table-card"><TableToolbar search={search} setSearch={setSearch} placeholder="ابحث باسم المستخدم أو رقم العملية" filters={['all', 'pending', 'approved', 'rejected']} active={filter} onFilter={(value) => setFilter(value as 'all' | DepositStatus)} /><div className="table-scroll"><table><thead><tr><th>المستخدم</th><th>المبلغ</th><th>طريقة الدفع</th><th>رقم العملية</th><th>الحالة</th><th>التاريخ</th><th /></tr></thead><tbody>{filtered.map((deposit) => <tr key={deposit.id}><td><div className="user-cell"><div className="avatar">{initials(deposit.userName)}</div><div><button className="link-button user-name-button" onClick={() => openUser(deposit.userId)} aria-label={`عرض حساب ${deposit.userName}`}>{deposit.userName}</button><small>{deposit.userEmail}</small></div></div></td><td><strong className="number">{formatMoney(deposit.amount)}</strong></td><td><strong>{deposit.method}</strong><small>{deposit.network}</small></td><td><span className="number">{deposit.txid}</span></td><td><StatusBadge value={deposit.status} /></td><td>{deposit.createdAt}</td><td><button className="icon-btn" onClick={() => setSelected(deposit)} aria-label="عرض تفاصيل الإيداع"><Eye size={15} /></button></td></tr>)}</tbody></table></div></div>{selected && <DepositDrawer deposit={selected} onClose={() => setSelected(null)} onUpdate={updateDeposit} />}{selectedUser && <UserDrawer user={selectedUser} data={data} onClose={() => setSelectedUser(null)} onToggle={toggleSelectedUser} />}</section>;
 }
 
 function DepositDrawer({ deposit, onClose, onUpdate }: { deposit: Deposit; onClose: () => void; onUpdate: (deposit: Deposit, status: DepositStatus, note?: string) => void }) {
@@ -473,6 +522,7 @@ function SitesPage({ data }: { data: AdminData }) {
   const [filter, setFilter] = useState<'all' | SiteStatus>('all');
   const [search, setSearch] = useState('');
   const [selected, setSelected] = useState<Site | null>(null);
+  const [statsSite, setStatsSite] = useState<Site | null>(null);
   const filtered = data.sites.filter((item) => (filter === 'all' || item.status === filter) && `${item.name} ${item.publisher} ${item.url}`.toLowerCase().includes(search.toLowerCase()));
   const update = (site: Site, status: SiteStatus, note = site.note) => {
     data.setSites((current) => current.map((item) => item.id === site.id ? { ...item, status, note } : item));
@@ -480,7 +530,15 @@ function SitesPage({ data }: { data: AdminData }) {
     data.notify(status === 'approved' ? 'تم قبول الموقع تجريبياً.' : status === 'rejected' ? 'تم رفض الموقع مع حفظ السبب.' : 'تم إيقاف الموقع تجريبياً.', status === 'rejected' ? 'error' : 'success');
     setSelected(null);
   };
-  return <section className="content"><PageHeading title="المواقع" description="مراجعة المواقع المضافة من الناشرين وإدارتها." actions={<button className="btn btn-subtle" onClick={() => setFilter('pending')}><Filter size={15} />المعلقة ({data.sites.filter((item) => item.status === 'pending').length})</button>} /><RequestSummary items={[['معلقة', data.sites.filter((item) => item.status === 'pending').length], ['مقبولة', data.sites.filter((item) => item.status === 'approved').length], ['مرفوضة', data.sites.filter((item) => item.status === 'rejected').length], ['موقوفة', data.sites.filter((item) => item.status === 'suspended').length]]} /><div className="card table-card"><TableToolbar search={search} setSearch={setSearch} placeholder="ابحث باسم الموقع أو الناشر" filters={['all', 'pending', 'approved', 'rejected', 'suspended']} active={filter} onFilter={(value) => setFilter(value as 'all' | SiteStatus)} /><div className="table-scroll"><table><thead><tr><th>الموقع</th><th>الناشر</th><th>التصنيف</th><th>الزوار</th><th>الحالة</th><th>تاريخ الإضافة</th><th /></tr></thead><tbody>{filtered.map((site) => <tr key={site.id}><td><div className="user-cell"><div className="avatar"><Globe2 size={15} /></div><div><strong>{site.name}</strong><small className="ltr">{site.url}</small></div></div></td><td>{site.publisher}</td><td>{site.category}</td><td className="number">{site.visitors}</td><td><StatusBadge value={site.status} /></td><td>{site.addedAt}</td><td><button className="icon-btn" onClick={() => setSelected(site)} aria-label="عرض تفاصيل الموقع"><Eye size={15} /></button></td></tr>)}</tbody></table></div></div>{selected && <SiteDrawer site={selected} onClose={() => setSelected(null)} onUpdate={update} />}</section>;
+  return <section className="content"><PageHeading title="المواقع" description="كل مواقع الناشرين في قائمة واضحة، مع فتح الموقع والإحصائيات من نفس البطاقة." actions={<button className="btn btn-subtle" onClick={() => setFilter('pending')}><Filter size={15} />المعلقة ({data.sites.filter((item) => item.status === 'pending').length})</button>} /><RequestSummary items={[['معلقة', data.sites.filter((item) => item.status === 'pending').length], ['مقبولة', data.sites.filter((item) => item.status === 'approved').length], ['مرفوضة', data.sites.filter((item) => item.status === 'rejected').length], ['موقوفة', data.sites.filter((item) => item.status === 'suspended').length]]} /><div className="card table-card"><TableToolbar search={search} setSearch={setSearch} placeholder="ابحث باسم الموقع أو الناشر" filters={['all', 'pending', 'approved', 'rejected', 'suspended']} active={filter} onFilter={(value) => setFilter(value as 'all' | SiteStatus)} /><div className="site-list">{filtered.length ? filtered.map((site) => <article className="site-card" key={site.id}><div className="site-card-main"><div className="site-identity"><div className="avatar avatar-large"><Globe2 size={20} /></div><div><h3>{site.name}</h3><a className="site-url ltr" href={siteHref(site.url)} target="_blank" rel="noreferrer">{site.url}</a><p>{site.publisher} · {site.category}</p></div></div><StatusBadge value={site.status} /></div><div className="site-card-meta"><div><small>الزوار الشهرية</small><strong className="number">{site.visitors}</strong></div><div><small>تاريخ الإضافة</small><strong>{site.addedAt}</strong></div><div className="site-card-actions"><a className="btn btn-small btn-primary" href={siteHref(site.url)} target="_blank" rel="noreferrer"><ExternalLink size={14} />فتح الموقع</a><button className="btn btn-small btn-gold" onClick={() => setStatsSite(site)}><BarChart3 size={14} />الإحصائيات</button><button className="btn btn-small btn-subtle" onClick={() => setSelected(site)}><Eye size={14} />مراجعة</button></div></div></article>) : <EmptyState icon={<Globe2 size={20} />} title="لا توجد مواقع مطابقة" description="جرّب تغيير الفلتر أو عبارة البحث." />}</div></div>{selected && <SiteDrawer site={selected} onClose={() => setSelected(null)} onUpdate={update} />}{statsSite && <SiteStatsDrawer site={statsSite} onClose={() => setStatsSite(null)} />}</section>;
+}
+
+function SiteStatsDrawer({ site, onClose }: { site: Site; onClose: () => void }) {
+  const visitors = compactNumber(site.visitors);
+  const pageviews = visitors * 3.4;
+  const clicks = visitors * (site.status === 'approved' ? 0.032 : 0.018);
+  const earnings = visitors * (site.status === 'approved' ? 0.0048 : 0.0024);
+  return <div className="drawer-backdrop" onClick={onClose}><aside className="drawer stats-drawer" onClick={(event) => event.stopPropagation()}><div className="drawer-head"><div><h3>إحصائيات الموقع</h3><p>{site.name} · آخر 30 يوماً</p></div><button className="icon-btn" onClick={onClose} aria-label="إغلاق"><X size={16} /></button></div><div className="profile-header"><div className="avatar avatar-large"><BarChart3 size={21} /></div><div><strong>{site.name}</strong><small className="ltr">{site.url}</small><StatusBadge value={site.status} /></div></div><div className="site-stats-grid"><div className="site-stat"><small>الزوار</small><strong>{formatCompact(visitors)}</strong><span>زيارة</span></div><div className="site-stat"><small>مشاهدات الصفحات</small><strong>{formatCompact(pageviews)}</strong><span>مشاهدة</span></div><div className="site-stat"><small>نسبة النقر</small><strong>{(clicks / visitors * 100).toFixed(2)}%</strong><span>CTR</span></div><div className="site-stat"><small>الأرباح التقديرية</small><strong>{formatMoney(earnings)}</strong><span>هذا الشهر</span></div></div><div className="notice-box"><strong>ملاحظة</strong><span>هذه الإحصائيات معروضة من بيانات تجريبية حالياً، وستتصل بالبيانات الحقيقية عند ربط Backend.</span></div></aside></div>;
 }
 
 function SiteDrawer({ site, onClose, onUpdate }: { site: Site; onClose: () => void; onUpdate: (site: Site, status: SiteStatus, note?: string) => void }) {
@@ -534,9 +592,9 @@ function ActivityPage({ data }: { data: AdminData }) {
 }
 
 function SettingsPage({ data }: { data: AdminData }) {
-  const [settings, setSettings] = useState({ minDeposit: '100', minWithdrawal: '250', platformFee: '2.5', withdrawalFee: '1.5', currency: 'ر.س', review: true, notifications: true, autoApprove: false });
+  const [settings, setSettings] = useState({ minDeposit: '100', minWithdrawal: '250', platformFee: '2.5', withdrawalFee: '1.5', currency: '$', review: true, notifications: true, autoApprove: false });
   const save = () => { data.notify('تم حفظ إعدادات المنصة في Mock State.'); };
-  return <section className="content"><PageHeading title="الإعدادات" description="إعدادات المنصة العامة والرسوم وقواعد المراجعة." actions={<button className="btn btn-primary" onClick={save}><Check size={15} />حفظ التغييرات</button>} /><div className="settings-grid"><div className="grid"><div className="card settings-card"><div className="card-head"><div><h3>الإعدادات المالية</h3><p>القيم الحالية تجريبية وتجهز للربط مع Backend.</p></div><CircleDollarSign size={18} color="#2866ad" /></div><div className="form-grid"><SettingField label="الحد الأدنى للإيداع" value={settings.minDeposit} onChange={(value) => setSettings({ ...settings, minDeposit: value })} suffix={settings.currency} /><SettingField label="الحد الأدنى للسحب" value={settings.minWithdrawal} onChange={(value) => setSettings({ ...settings, minWithdrawal: value })} suffix={settings.currency} /><SettingField label="رسوم المنصة" value={settings.platformFee} onChange={(value) => setSettings({ ...settings, platformFee: value })} suffix="%" /><SettingField label="رسوم السحب" value={settings.withdrawalFee} onChange={(value) => setSettings({ ...settings, withdrawalFee: value })} suffix="%" /><div className="field"><label>العملة الأساسية</label><select className="select" value={settings.currency} onChange={(event) => setSettings({ ...settings, currency: event.target.value })}><option>ر.س</option><option>دولار</option><option>يورو</option></select></div></div></div><div className="card settings-card"><div className="card-head"><div><h3>حسابات المستخدمين</h3><p>قواعد تفعيل الحسابات والمراجعات.</p></div><Users size={18} color="#2b947d" /></div><SettingToggle title="مراجعة الحسابات الجديدة" description="ضع الحسابات الجديدة في طابور المراجعة." value={settings.review} onChange={() => setSettings({ ...settings, review: !settings.review })} /><SettingToggle title="الموافقة التلقائية على المواقع" description="لا يوصى بها قبل ربط نظام الجودة." value={settings.autoApprove} onChange={() => setSettings({ ...settings, autoApprove: !settings.autoApprove })} /></div></div><div className="side-stack"><div className="card settings-card"><div className="card-head"><div><h3>الإشعارات</h3><p>قنوات التنبيه داخل لوحة الإدارة.</p></div><Bell size={18} color="#c9983e" /></div><SettingToggle title="تنبيهات الإجراءات المهمة" description="الإيداعات والسحوبات والموافقات." value={settings.notifications} onChange={() => setSettings({ ...settings, notifications: !settings.notifications })} /><SettingToggle title="ملخص أسبوعي" description="تذكير بأداء الشبكة كل أسبوع." value={true} onChange={() => data.notify('تم تبديل الملخص الأسبوعي تجريبياً.')} /></div><div className="card settings-card"><div className="card-head"><div><h3>حالة البيئة</h3><p>جاهز للربط مع خدمات الإنتاج.</p></div><ShieldCheck size={18} color="#2b947d" /></div><div className="environment-row"><span className="status-dot green" />Mock Data نشطة</div><div className="environment-row"><span className="status-dot blue" />واجهة API جاهزة للتكامل</div></div></div></div></section>;
+  return <section className="content"><PageHeading title="الإعدادات" description="إعدادات المنصة العامة والرسوم وقواعد المراجعة." actions={<button className="btn btn-primary" onClick={save}><Check size={15} />حفظ التغييرات</button>} /><div className="settings-grid"><div className="grid"><div className="card settings-card"><div className="card-head"><div><h3>الإعدادات المالية</h3><p>القيم الحالية تجريبية وتجهز للربط مع Backend.</p></div><CircleDollarSign size={18} color="#2866ad" /></div><div className="form-grid"><SettingField label="الحد الأدنى للإيداع" value={settings.minDeposit} onChange={(value) => setSettings({ ...settings, minDeposit: value })} suffix={settings.currency} /><SettingField label="الحد الأدنى للسحب" value={settings.minWithdrawal} onChange={(value) => setSettings({ ...settings, minWithdrawal: value })} suffix={settings.currency} /><SettingField label="رسوم المنصة" value={settings.platformFee} onChange={(value) => setSettings({ ...settings, platformFee: value })} suffix="%" /><SettingField label="رسوم السحب" value={settings.withdrawalFee} onChange={(value) => setSettings({ ...settings, withdrawalFee: value })} suffix="%" /><div className="field"><label>العملة الأساسية</label><div className="input-with-suffix"><input className="input" value="$" readOnly dir="ltr" /><span>$</span></div></div></div></div><div className="card settings-card"><div className="card-head"><div><h3>حسابات المستخدمين</h3><p>قواعد تفعيل الحسابات والمراجعات.</p></div><Users size={18} color="#2b947d" /></div><SettingToggle title="مراجعة الحسابات الجديدة" description="ضع الحسابات الجديدة في طابور المراجعة." value={settings.review} onChange={() => setSettings({ ...settings, review: !settings.review })} /><SettingToggle title="الموافقة التلقائية على المواقع" description="لا يوصى بها قبل ربط نظام الجودة." value={settings.autoApprove} onChange={() => setSettings({ ...settings, autoApprove: !settings.autoApprove })} /></div></div><div className="side-stack"><div className="card settings-card"><div className="card-head"><div><h3>الإشعارات</h3><p>قنوات التنبيه داخل لوحة الإدارة.</p></div><Bell size={18} color="#c9983e" /></div><SettingToggle title="تنبيهات الإجراءات المهمة" description="الإيداعات والسحوبات والموافقات." value={settings.notifications} onChange={() => setSettings({ ...settings, notifications: !settings.notifications })} /><SettingToggle title="ملخص أسبوعي" description="تذكير بأداء الشبكة كل أسبوع." value={true} onChange={() => data.notify('تم تبديل الملخص الأسبوعي تجريبياً.')} /></div><div className="card settings-card"><div className="card-head"><div><h3>حالة البيئة</h3><p>جاهز للربط مع خدمات الإنتاج.</p></div><ShieldCheck size={18} color="#2b947d" /></div><div className="environment-row"><span className="status-dot green" />Mock Data نشطة</div><div className="environment-row"><span className="status-dot blue" />واجهة API جاهزة للتكامل</div></div></div></div></section>;
 }
 
 function SettingField({ label: fieldLabel, value, onChange, suffix }: { label: string; value: string; onChange: (value: string) => void; suffix: string }) {
